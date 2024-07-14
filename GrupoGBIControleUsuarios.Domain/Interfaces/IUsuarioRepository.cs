@@ -1,6 +1,6 @@
 ﻿using GrupoGBIControleUsuarios.Domain.Entities;
 
-namespace CleanArchMvc.Domain.Interfaces;
+namespace GrupoGBIControleUsuarios.Domain.Interfaces;
 
 public interface IUsuarioRepository
 {

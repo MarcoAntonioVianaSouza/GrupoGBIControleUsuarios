@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CleanArchMvc.Infra.Data.EntitiesConfiguration
+namespace GrupoGBIControleUsuarios.Infra.Data.EntitiesConfiguration
 {
     public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
     {
