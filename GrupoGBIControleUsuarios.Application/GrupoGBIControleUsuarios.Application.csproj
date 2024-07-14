@@ -9,11 +9,9 @@
    <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Mappings\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+
+   <ItemGroup>
+     <ProjectReference Include="..\GrupoGBIControleUsuarios.Domain\GrupoGBIControleUsuarios.Domain.csproj" />
+   </ItemGroup>
 
 </Project>
