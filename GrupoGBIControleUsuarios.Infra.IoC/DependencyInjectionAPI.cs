@@ -8,22 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GrupoGBIControleUsuarios.Infra.IoC
+namespace GrupoGBIControleUsuarios.Infra.IoC;
+
+public static class DependencyInjectionAPI
 {
-    public static class DependencyInjectionAPI
+    public static IServiceCollection AddInfrastructureAPI(this IServiceCollection services,
+        IConfiguration configuration)
     {
-        public static IServiceCollection AddInfrastructureAPI(this IServiceCollection services,
-            IConfiguration configuration)
-        {
-            services.AddDbContext<ApplicationDbContext>(options =>
-             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"
-            ), b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+        services.AddDbContext<ApplicationDbContext>(options =>
+         options.UseSqlServer(configuration.GetConnectionString("ControleUsuarioDB"
+        ), b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
-            services.AddScoped<IUsuarioService, UsuarioService>();
-            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
-
-            return services;
-        }
+        services.AddScoped<IUsuarioService, UsuarioService>();
+        services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+        services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+        
+        return services;
     }
 }
