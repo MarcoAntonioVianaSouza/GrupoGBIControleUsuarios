@@ -9,7 +9,7 @@ public class ApplicationDbContext : DbContext
     { }
 
     // Definição do mapeamento ORM
-    public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<Usuario>? Usuarios { get; set; }
     
 
     // Configuração da Fluent-API

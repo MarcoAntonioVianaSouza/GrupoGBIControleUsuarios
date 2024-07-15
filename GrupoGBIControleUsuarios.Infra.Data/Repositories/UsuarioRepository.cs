@@ -45,4 +45,11 @@ public class UsuarioRepository : IUsuarioRepository
         await _usuarioContext.SaveChangesAsync();
         return usuario;
     }
+
+    public Usuario? AutenticarUsuarioPorEmail(string email, string senha)
+    {
+         return _usuarioContext.Usuarios.Where(u => u.Email.Equals(email)).FirstOrDefault();
+    }
+
+
 }

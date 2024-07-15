@@ -31,22 +31,31 @@ namespace GrupoGBIControleUsuarios.Application.Services
             return _mapper.Map<UsuarioDTO>(usuarioEntity);
         }
 
-        public async Task Criar(UsuarioDTO usuarioDto)
+        public async Task<UsuarioDTO> Criar(UsuarioDTO usuarioDto)
         {
+            // TODO:IMPLEMENTAR SEGURANÇA (CRIPOGRAFIA)
             var usuarioEntity = _mapper.Map<Usuario>(usuarioDto);
-            await _usuarioRepository.Criar(usuarioEntity);
+            var novoUsuario = await _usuarioRepository.Criar(usuarioEntity);
+            return _mapper.Map<UsuarioDTO>(novoUsuario);
         }
 
-        public async Task Atualizar(UsuarioDTO usuarioDto)
+        public async Task<UsuarioDTO> Atualizar(UsuarioDTO usuarioDto)
         {
             var usuarioEntity = _mapper.Map<Usuario>(usuarioDto);
-            await _usuarioRepository.Atualizar(usuarioEntity);
+            var usuarioAtualizado = await _usuarioRepository.Atualizar(usuarioEntity);
+            return _mapper.Map<UsuarioDTO>(usuarioAtualizado);
         }
 
-        public async Task Remover(int? id)
+        public async Task<UsuarioDTO> Remover(int? id)
         {
             var usuarioEntity = _usuarioRepository.ObterPorId(id).Result;
-            await _usuarioRepository.Remover(usuarioEntity);
+            var usuarioExcluido =  await _usuarioRepository.Remover(usuarioEntity);
+            return _mapper.Map<UsuarioDTO>(usuarioExcluido);
+        }
+
+        public Usuario? AutenticarPorEmail(string email, string senha)
+        {
+            return _usuarioRepository.AutenticarUsuarioPorEmail(email, senha);
         }
     }
 }

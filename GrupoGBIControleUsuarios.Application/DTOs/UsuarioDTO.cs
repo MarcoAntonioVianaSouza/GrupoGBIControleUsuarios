@@ -6,8 +6,7 @@ namespace GrupoGBIControleUsuarios.Application.DTOs;
 public class UsuarioDTO
 {
     public int Id { get; set; }
-
-    
+        
     [Required(ErrorMessage = "Um nome de usuário (username) é obrigatório")]
     [MinLength(10)]
     [MaxLength(20)]

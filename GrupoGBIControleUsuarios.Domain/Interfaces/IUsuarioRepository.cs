@@ -9,4 +9,5 @@ public interface IUsuarioRepository
     Task<Usuario> Criar(Usuario usuario);
     Task<Usuario> Atualizar(Usuario usuario);
     Task<Usuario> Remover(Usuario usuario);
+    Usuario? AutenticarUsuarioPorEmail(string email, string password);
 }
