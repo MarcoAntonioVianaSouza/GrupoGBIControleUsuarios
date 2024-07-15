@@ -3,31 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoGBIControleUsuarios.Domain", "GrupoGBIControleUsuarios.Domain\GrupoGBIControleUsuarios.Domain.csproj", "{E9166619-1C90-4AB5-A1D3-BBA4D517CEE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoGBIControleUsuarios.Domain", "GrupoGBIControleUsuarios.Domain\GrupoGBIControleUsuarios.Domain.csproj", "{E9166619-1C90-4AB5-A1D3-BBA4D517CEE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoGBIControleUsuarios.Tests", "GrupoGBIControleUsuarios.Tests\GrupoGBIControleUsuarios.Tests.csproj", "{8CE4990A-53BB-4D87-9A82-8DB4F612096D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoGBIControleUsuarios.Application", "GrupoGBIControleUsuarios.Application\GrupoGBIControleUsuarios.Application.csproj", "{6416A5B5-243C-4FE5-A225-10D3ED87CA20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoGBIControleUsuarios.Application", "GrupoGBIControleUsuarios.Application\GrupoGBIControleUsuarios.Application.csproj", "{6416A5B5-243C-4FE5-A225-10D3ED87CA20}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E9166619-1C90-4AB5-A1D3-BBA4D517CEE0} = {E9166619-1C90-4AB5-A1D3-BBA4D517CEE0}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoGBIControleUsuarios.Infra.Data", "GrupoGBIControleUsuarios.Infra.Data\GrupoGBIControleUsuarios.Infra.Data.csproj", "{551C12DD-62E8-4820-A194-9C7BE20776EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoGBIControleUsuarios.Infra.Data", "GrupoGBIControleUsuarios.Infra.Data\GrupoGBIControleUsuarios.Infra.Data.csproj", "{551C12DD-62E8-4820-A194-9C7BE20776EA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E9166619-1C90-4AB5-A1D3-BBA4D517CEE0} = {E9166619-1C90-4AB5-A1D3-BBA4D517CEE0}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoGBIControleUsuarios.Infra.IoC", "GrupoGBIControleUsuarios.Infra.IoC\GrupoGBIControleUsuarios.Infra.IoC.csproj", "{4B8CC2A5-828B-4839-B29C-DA76E315BF6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoGBIControleUsuarios.Infra.IoC", "GrupoGBIControleUsuarios.Infra.IoC\GrupoGBIControleUsuarios.Infra.IoC.csproj", "{4B8CC2A5-828B-4839-B29C-DA76E315BF6A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{551C12DD-62E8-4820-A194-9C7BE20776EA} = {551C12DD-62E8-4820-A194-9C7BE20776EA}
 		{6416A5B5-243C-4FE5-A225-10D3ED87CA20} = {6416A5B5-243C-4FE5-A225-10D3ED87CA20}
 		{E9166619-1C90-4AB5-A1D3-BBA4D517CEE0} = {E9166619-1C90-4AB5-A1D3-BBA4D517CEE0}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoGBIControleUsuarios.API", "GrupoGBIControleUsuarios.API\GrupoGBIControleUsuarios.API.csproj", "{E7463D4E-C9DD-475C-851E-6E55816277E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoGBIControleUsuarios.API", "GrupoGBIControleUsuarios.API\GrupoGBIControleUsuarios.API.csproj", "{E7463D4E-C9DD-475C-851E-6E55816277E2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4B8CC2A5-828B-4839-B29C-DA76E315BF6A} = {4B8CC2A5-828B-4839-B29C-DA76E315BF6A}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoGBIControleUsuarios.Domain.Tests", "GrupoGBIControleUsuarios.Domain.Tests\GrupoGBIControleUsuarios.Domain.Tests.csproj", "{6D680BF3-35CF-4476-AFB6-572576D7E156}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +39,6 @@ Global
 		{E9166619-1C90-4AB5-A1D3-BBA4D517CEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9166619-1C90-4AB5-A1D3-BBA4D517CEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9166619-1C90-4AB5-A1D3-BBA4D517CEE0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8CE4990A-53BB-4D87-9A82-8DB4F612096D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CE4990A-53BB-4D87-9A82-8DB4F612096D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CE4990A-53BB-4D87-9A82-8DB4F612096D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CE4990A-53BB-4D87-9A82-8DB4F612096D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6416A5B5-243C-4FE5-A225-10D3ED87CA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6416A5B5-243C-4FE5-A225-10D3ED87CA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6416A5B5-243C-4FE5-A225-10D3ED87CA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +55,10 @@ Global
 		{E7463D4E-C9DD-475C-851E-6E55816277E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7463D4E-C9DD-475C-851E-6E55816277E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7463D4E-C9DD-475C-851E-6E55816277E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D680BF3-35CF-4476-AFB6-572576D7E156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D680BF3-35CF-4476-AFB6-572576D7E156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D680BF3-35CF-4476-AFB6-572576D7E156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D680BF3-35CF-4476-AFB6-572576D7E156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
