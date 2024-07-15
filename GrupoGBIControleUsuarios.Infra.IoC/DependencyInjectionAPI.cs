@@ -15,14 +15,17 @@ public static class DependencyInjectionAPI
     public static IServiceCollection AddInfrastructureAPI(this IServiceCollection services,
         IConfiguration configuration)
     {
-        //"ControleUsuarioDB": "Data Source=.\\MSSQLSERVER2019;Initial Catalog=GrupoGBIControleUsuario;Integrated Security=True;Encrypt=False"
 
         var server = configuration["DbServer"] ?? "localhost\\MSSQLSERVER2019";
         var port = configuration["DbPort"] ?? "1433"; // Padrão SQL SERVER
         var user = configuration["DbUser"] ?? "SA";
         var password = configuration["Password"] ?? "Dinamarca@2020";
         var database = configuration["Database"] ?? "GrupoGBIControleUsuarioProd";
-        var connectionString = $"Server={server}, {port}; Initial Catalog={database}; User ID={user}; Password={password}; Encrypt=False";
+
+        // var connectionString = $"Server={server}, {port}; Initial Catalog={database}; User ID={user}; Password={password}; Encrypt=False";
+        var connectionString = $"Server={server}; Initial Catalog={database}; User ID={user}; Password={password}; Encrypt=False";
+        //var connectionStringlocal = $"Server={server}, {port};Initial Catalog={database};User ID={user};Password={password}; Encrypt=False";
+        //"Data Source=.\\MSSQLSERVER2019;Initial Catalog=GrupoGBIControleUsuarioPROD;Integrated Security=True;Encrypt=False"
 
         services.AddDbContext<ApplicationDbContext>(options =>
          options.UseSqlServer(connectionString, b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
