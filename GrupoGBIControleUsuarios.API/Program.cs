@@ -1,6 +1,12 @@
+using GrupoGBIControleUsuarios.Infra.IoC;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddInfrastructureAPI(builder.Configuration);
+builder.Services.AddInfrastreuctureJWT(builder.Configuration);
+builder.Services.AddInfrastructureSwagger();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -18,6 +24,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStatusCodePages(); // Vai explicitar o erro que está sendo exibido.
+app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

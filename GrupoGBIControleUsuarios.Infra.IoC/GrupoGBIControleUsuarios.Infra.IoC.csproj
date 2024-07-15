@@ -1,9 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  
+  
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.32" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.6.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.6.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.6.2" />
+  </ItemGroup>
+
+  
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GrupoGBIControleUsuarios.Application\GrupoGBIControleUsuarios.Application.csproj" />
+    <ProjectReference Include="..\GrupoGBIControleUsuarios.Domain\GrupoGBIControleUsuarios.Domain.csproj" />
+    <ProjectReference Include="..\GrupoGBIControleUsuarios.Infra.Data\GrupoGBIControleUsuarios.Infra.Data.csproj" />
+  </ItemGroup>
 
 </Project>
