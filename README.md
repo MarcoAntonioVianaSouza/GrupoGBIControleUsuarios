@@ -23,3 +23,5 @@ Esta é uma aplicação simples que foi desenvolvida para avaliação técnica d
 5. docker-compose up
 6. Acessar o URL
 7. Acessar o url https://localhost:8090/swagger/index.html
+---
+Obs: Projeto será alterado para banco Postgree e Docker-Compose deverá ser revisto.
