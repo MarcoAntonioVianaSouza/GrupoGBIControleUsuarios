@@ -13,5 +13,13 @@ Esta é uma aplicação simples que foi desenvolvida para avaliação técnica d
 
 ---
 ### Pré-Requisitos
-1) Utilizar framework .NET 6.0
-
+1) Docker
+---
+### Passos
+1. Criar uma pasta local C:\GrupoGBIControleUsuarios
+2. Clonar o projeto https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios.git
+3. cd GrupoGBIControleUsuarios
+4. docker-compose build
+5. docker-compose up
+6. Acessar o URL
+7. Acessar o url https://localhost:8090/swagger/index.html
