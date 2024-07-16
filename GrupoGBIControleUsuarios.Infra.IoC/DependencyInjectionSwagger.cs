@@ -9,7 +9,16 @@ public static class DependencyInjectionSwagger
     {
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "GrupoGBIControleUsuarios.API", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "GrupoGBIControleUsuarios.API",
+                Version = "v1",
+                Contact = new OpenApiContact
+                {
+                    Name = "Marco Antonio",
+                    Email = "marco.antonio.viana.souza@gmail.com"
+                }
+            });
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
             {
                 // Definir configurações

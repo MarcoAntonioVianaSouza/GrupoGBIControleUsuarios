@@ -22,7 +22,7 @@ public class UsuarioController : ControllerBase
         _usuarioService = usuarioService;
         _configuration = configuration;
     }
-
+   
     [HttpPost("LoginUser")]
     public ActionResult<UserToken> Login([FromBody] LoginModel userInfo)
     {
@@ -37,8 +37,15 @@ public class UsuarioController : ControllerBase
             return BadRequest(ModelState);
         }
     }
+    /// <summary>
+    /// Adiciona um novo usuário no sistema.
+    /// </summary>
+    /// <param name="UsuarioDTO">Campos necessários para cadastrar um usuário.</param>
+    /// <returns>ActionResult</returns>
+    /// <response code="200">Caso a inserção seja realizada com sucesso.</response>
 
     [HttpPost("Usuario")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> CriarUsuario([FromBody] UsuarioDTO novoUsuario)
     {
         try
@@ -54,12 +61,11 @@ public class UsuarioController : ControllerBase
     }
 
     /// <summary>
-    /// Listar todos os usuários.
+    /// Retorna uma lista de usuários cadastrados no sistema.
     /// </summary>
-    /// <returns>Os usários cadastrados do sistema</returns>
-    /// <response code="200">Retorna uma lista de usuários cadastrados</response>
-    
+    /// <returns>ActionResult</returns>
     [HttpGet("Usuarios")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> GetUsuarios()
     {
         try
@@ -78,8 +84,13 @@ public class UsuarioController : ControllerBase
         }
     }
 
-    
+    /// <summary>
+    /// Retornar um usuário específico.
+    /// </summary>
+    /// <param name="usuarioId"></param>
+    /// <returns>UsuarioDTO</returns>
     [HttpGet("{usuarioId:int}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<UsuarioDTO>> Get(int usuarioId)
     {
 
@@ -90,8 +101,13 @@ public class UsuarioController : ControllerBase
         return Ok(user);
     }
 
-    
+   /// <summary>
+   /// Alterar usuário
+   /// </summary>
+   /// <param name="usuarioDto"></param>
+   /// <returns>UsuarioDTO</returns>
     [HttpPut]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> Update(UsuarioDTO usuarioDto)
     {
         if (usuarioDto == null)
@@ -102,11 +118,16 @@ public class UsuarioController : ControllerBase
         if (usuarioAtualizado == null)
             return BadRequest("Não foi possível atualizar registro do usuário.");
 
-        return Ok("Usuário atualizado com sucesso.");
+        return Ok(usuarioAtualizado);
     }
 
-    
+    /// <summary>
+    /// Excluir usuário
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpDelete("{id:int}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> Delete(int id)
     {
         var user = await _usuarioService.Remover(id);
