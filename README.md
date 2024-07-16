@@ -32,5 +32,5 @@ Obs: Projeto será alterado para banco Postgree e Docker-Compose deverá ser rev
 
 ## Vídeo da aplicação Visual Studio - Montagem do ambiente docker (Porém apresentando um erro no container que está sendo verificado)
 
-- [Resposta Questões Técnicas](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/AplicacaoExecutandoLocalmente-AnalisandoErroDocker-2.zip)
+- [Vídeo com execução da Aplicação](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/AplicacaoExecutandoLocalmente-AnalisandoErroDocker-2.zip)
 
