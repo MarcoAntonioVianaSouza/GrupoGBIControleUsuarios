@@ -31,6 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoGBIControleUsuarios.Do
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{D77E95A1-1764-43FF-B048-3823CA82E680}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\Clientes\GB\AplicacaoExecutandoLocalmente-AnalisandoErroDocker.mp4 = ..\..\Clientes\GB\AplicacaoExecutandoLocalmente-AnalisandoErroDocker.mp4
 		docker-compose.yml = docker-compose.yml
 		Dockerfile = Dockerfile
 	EndProjectSection
