@@ -25,3 +25,7 @@ Esta é uma aplicação simples que foi desenvolvida para avaliação técnica d
 7. Acessar o url https://localhost:8090/swagger/index.html
 ---
 Obs: Projeto será alterado para banco Postgree e Docker-Compose deverá ser revisto.
+
+## Questões Técnicas
+
+ - [Resposta Questões Técnicas](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/RESPOSTA_QUESTOES_TECNICAS_MARCOVIANA.pdf)
