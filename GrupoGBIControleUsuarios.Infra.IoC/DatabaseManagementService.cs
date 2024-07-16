@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace livraria.Services
+namespace GrupoGBIControleUsuarios.Services
 {
     public static class DatabaseManagementService
     {

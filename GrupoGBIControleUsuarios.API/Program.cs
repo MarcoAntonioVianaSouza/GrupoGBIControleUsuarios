@@ -1,5 +1,5 @@
 using GrupoGBIControleUsuarios.Infra.IoC;
-using livraria.Services;
+using GrupoGBIControleUsuarios.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
