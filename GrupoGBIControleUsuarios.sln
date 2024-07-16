@@ -27,7 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoGBIControleUsuarios.AP
 		{4B8CC2A5-828B-4839-B29C-DA76E315BF6A} = {4B8CC2A5-828B-4839-B29C-DA76E315BF6A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoGBIControleUsuarios.Domain.Tests", "GrupoGBIControleUsuarios.Domain.Tests\GrupoGBIControleUsuarios.Domain.Tests.csproj", "{6D680BF3-35CF-4476-AFB6-572576D7E156}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoGBIControleUsuarios.Domain.Tests", "GrupoGBIControleUsuarios.Domain.Tests\GrupoGBIControleUsuarios.Domain.Tests.csproj", "{6D680BF3-35CF-4476-AFB6-572576D7E156}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{D77E95A1-1764-43FF-B048-3823CA82E680}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
