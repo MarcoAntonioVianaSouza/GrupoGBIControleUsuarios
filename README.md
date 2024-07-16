@@ -29,3 +29,8 @@ Obs: Projeto será alterado para banco Postgree e Docker-Compose deverá ser rev
 ## Questões Técnicas
 
  - [Resposta Questões Técnicas](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/RESPOSTA_QUESTOES_TECNICAS_MARCOVIANA.pdf)
+
+## Vídeo da aplicação Visual Studio - Montagem do ambiente docker (Porém apresentando um erro no container que está sendo verificado)
+
+- [Resposta Questões Técnicas](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/AplicacaoExecutandoLocalmente-AnalisandoErroDocker-2.zip)
+
