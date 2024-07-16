@@ -38,11 +38,11 @@ COPY GrupoGBIControleUsuarios.API/GrupoGBIControleUsuarios.API.csproj ./
 RUN dotnet restore GrupoGBIControleUsuarios.API.csproj
 
 COPY . ./
-RUN dotnet publish GrupoGBIControleUsuarios.Domain.csproj -c Release -o out
-#RUN dotnet publish GrupoGBIControleUsuarios.Application.csproj -c Release -o out
-#RUN dotnet publish GrupoGBIControleUsuarios.Infra.Data.csproj -c Release -o out
-#RUN dotnet publish GrupoGBIControleUsuarios.Infra.IoC.csproj -c Release -o out
-#RUN dotnet publish GrupoGBIControleUsuarios.API.csproj -c Release -o out
+RUN dotnet publish GrupoGBIControleUsuarios.Domain/GrupoGBIControleUsuarios.Domain.csproj -c Release -o out
+RUN dotnet publish GrupoGBIControleUsuarios.Application/GrupoGBIControleUsuarios.Application.csproj -c Release -o out
+RUN dotnet publish GrupoGBIControleUsuarios.Infra.Data/GrupoGBIControleUsuarios.Infra.Data.csproj -c Release -o out
+RUN dotnet publish GrupoGBIControleUsuarios.Infra.IoC/GrupoGBIControleUsuarios.Infra.IoC.csproj -c Release -o out
+RUN dotnet publish GrupoGBIControleUsuarios.API/GrupoGBIControleUsuarios.API.csproj -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 
@@ -50,27 +50,4 @@ WORKDIR /app
 
 COPY --from=build /app/out .
 
-#ENTRYPOINT ["dotnet", "GrupoGBIControleUsuarios.Domain.dll"]
-
-
-#--- fim
-#
-#RUN dotnet restore 
-#
-# copy everything else and build app
-
-#COPY GrupoGBIControleUsuarios/. ./GrupoGBIControleUsuarios/
-#COPY GrupoGBIControleUsuarios.Domain/. ./GrupoGBIControleUsuarios.Domain/
-#COPY GrupoGBIControleUsuarios.Application/. ./GrupoGBIControleUsuarios.Application/
-#COPY GrupoGBIControleUsuarios.Infra.Data/. ./GrupoGBIControleUsuarios.Infra.Data/
-#COPY GrupoGBIControleUsuarios.Infra.IoC/. ./GrupoGBIControleUsuarios.Infra.IoC/ 
-#COPY GrupoGBIControleUsuarios.API/. ./GrupoGBIControleUsuarios.API/ 
-#
-#WORKDIR /app/GrupoGBIControleUsuarios
-#RUN dotnet publish -c Release -o out 
-#
-#FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
-#WORKDIR /app/GrupoGBIControleUsuarios
-#
-#COPY --from=build /app/GrupoGBIControleUsuarios/out ./
-#ENTRYPOINT ["dotnet", "GrupoGBIControleUsuarios.API.dll"]
+ENTRYPOINT ["dotnet", "GrupoGBIControleUsuarios.API.dll"]

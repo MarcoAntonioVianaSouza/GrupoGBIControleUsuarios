@@ -1,10 +1,12 @@
 version: '3'
 services:
   mssql-server:
-    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    #image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    image:  mcr.microsoft.com/mssql/server
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "Bsr4762ha7is44*9"
+      #SA_PASSWORD: "Bsr4762ha7is44*9"
+      MSSQL_SA_PASSWORD: "Bsr4762ha7is44*9"
       MSSQL_PID: Express
     ports:
       - "1433:1433"
