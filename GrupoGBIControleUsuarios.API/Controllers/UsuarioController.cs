@@ -46,7 +46,8 @@ public class UsuarioController : ControllerBase
     /// <returns>ActionResult</returns>
     /// <response code="200">Caso a inserção seja realizada com sucesso.</response>
 
-    [HttpPost("Usuario")]
+    //[HttpPost("Criar")]
+    [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public async Task<ActionResult> CriarUsuario([FromBody] UsuarioDTO usuarioDto)
     {
@@ -71,7 +72,8 @@ public class UsuarioController : ControllerBase
     /// Retorna uma lista de usuários cadastrados no sistema.
     /// </summary>
     /// <returns>ActionResult</returns>
-    [HttpGet("Usuarios")]
+    //[HttpGet("Usuarios")]
+    [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> GetUsuarios()
     {
@@ -112,7 +114,7 @@ public class UsuarioController : ControllerBase
    /// </summary>
    /// <returns>UsuarioDTO</returns>
     [HttpPut]
-    public async Task<ActionResult> Update([FromBody] UsuarioDTO usuarioDto)
+    public async Task<ActionResult> Atualizar([FromBody] UsuarioDTO usuarioDto)
     {
       
         var usuarioAtualizado = await _usuarioService.Atualizar(usuarioDto);
@@ -130,7 +132,7 @@ public class UsuarioController : ControllerBase
     /// <returns></returns>
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<ActionResult> Delete(int id)
+    public async Task<ActionResult> Remover(int id)
     {
         var usuario = await _usuarioService.ObterPorId(id);
         if (usuario == null)
