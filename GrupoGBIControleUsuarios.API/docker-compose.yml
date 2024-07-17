@@ -1,4 +1,9 @@
-version: '3'
+version: '3.4'
+
+networks:
+  dockerapi-dev:
+    driver: bridge 
+
 services:
   mssql-server:
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
@@ -8,8 +13,11 @@ services:
       MSSQL_PID: Express
     ports:
       - "1433:1433"
+    networks:
+      - dockerapi-dev  
     volumes:
       - C:\dados\volumes\sqlserver:/var/opt/mssql/data
+
   usuario-app:
     build: .
     environment:
@@ -20,3 +28,5 @@ services:
       Database: "GrupoGBIControleUsuarioProd"
     ports: 
       - "8090:80"
+    networks:
+      - dockerapi-dev  

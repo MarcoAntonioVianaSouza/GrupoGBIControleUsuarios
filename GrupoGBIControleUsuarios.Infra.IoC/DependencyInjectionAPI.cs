@@ -29,7 +29,7 @@ public static class DependencyInjectionAPI
         services.AddDbContext<ApplicationDbContext>(options =>
          options.UseSqlServer(connectionString, b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
-        //// Descomentar se for utilizar Local (Sem Docker)
+        // Descomentar se for utilizar Local (Sem Docker)
         //services.AddDbContext<ApplicationDbContext>(options =>
         // options.UseSqlServer(configuration.GetConnectionString("ControleUsuarioDB"
         //), b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
