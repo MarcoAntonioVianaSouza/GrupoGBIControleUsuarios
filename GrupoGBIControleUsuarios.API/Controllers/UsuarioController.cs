@@ -1,8 +1,10 @@
 ﻿using GrupoGBIControleUsuarios.API.Models;
 using GrupoGBIControleUsuarios.Application.DTOs;
 using GrupoGBIControleUsuarios.Application.Interfaces;
+using GrupoGBIControleUsuarios.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -45,16 +47,21 @@ public class UsuarioController : ControllerBase
     /// <response code="200">Caso a inserção seja realizada com sucesso.</response>
 
     [HttpPost("Usuario")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> CriarUsuario([FromBody] UsuarioDTO novoUsuario)
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    public async Task<ActionResult> CriarUsuario([FromBody] UsuarioDTO usuarioDto)
     {
         try
         {
-            await _usuarioService.Criar(novoUsuario);
-            return Ok($"Usuário {novoUsuario.Email} foi criado com sucesso.");
+            var novoUsuario = await _usuarioService.Criar(usuarioDto);
+            //return Ok($"Usuário {novoUsuario.Email} foi criado com sucesso.");
+            return CreatedAtAction(nameof(ObterUsuarioPorId),
+            new { id = novoUsuario.Id },
+            novoUsuario);
+
         }
         catch (Exception ex)
         {
+            //TODO:Registrar Log
             ModelState.AddModelError(string.Empty, "Erro ao criar usuário.");
             return BadRequest(ModelState);
         }
@@ -87,38 +94,33 @@ public class UsuarioController : ControllerBase
     /// <summary>
     /// Retornar um usuário específico.
     /// </summary>
-    /// <param name="usuarioId"></param>
+    /// <param name="id"></param>
     /// <returns>UsuarioDTO</returns>
-    [HttpGet("{usuarioId:int}")]
+    [HttpGet("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult<UsuarioDTO>> Get(int usuarioId)
+    public async Task<ActionResult<UsuarioDTO>> ObterUsuarioPorId(int id)
     {
+        var usuario = await _usuarioService.ObterPorId(id);
+        if (usuario == null)
+            return NotFound($"Usuário não encontrado com o id {id}.");
 
-        var user = await _usuarioService.ObterPorId(usuarioId);
-        if (user == null)
-            return NotFound($"Usuário não encontrado com o id {usuarioId}.");
-
-        return Ok(user);
+        return Ok(usuario);
     }
 
    /// <summary>
    /// Alterar usuário
    /// </summary>
-   /// <param name="usuarioDto"></param>
    /// <returns>UsuarioDTO</returns>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> Update(UsuarioDTO usuarioDto)
+    public async Task<ActionResult> Update([FromBody] UsuarioDTO usuarioDto)
     {
-        if (usuarioDto == null)
-            return BadRequest("Dados incorretos");
-
+      
         var usuarioAtualizado = await _usuarioService.Atualizar(usuarioDto);
 
         if (usuarioAtualizado == null)
             return BadRequest("Não foi possível atualizar registro do usuário.");
-
-        return Ok(usuarioAtualizado);
+        else
+            return Ok(usuarioAtualizado);
     }
 
     /// <summary>
@@ -127,12 +129,16 @@ public class UsuarioController : ControllerBase
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpDelete("{id:int}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<ActionResult> Delete(int id)
     {
-        var user = await _usuarioService.Remover(id);
+        var usuario = await _usuarioService.ObterPorId(id);
+        if (usuario == null)
+            return NotFound($"Usuário não encontrado com o id {id}.");
 
-        if (user == null)
+        var usuarioRemovido = await _usuarioService.Remover(id);
+
+        if (usuarioRemovido == null)
             return BadRequest("Erro ao excluir usuário.");
 
         return Ok("Usuário excluído com sucesso");

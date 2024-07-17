@@ -23,13 +23,13 @@ public static class DependencyInjectionAPI
         var database = configuration["Database"] ?? "GrupoGBIControleUsuarioProd";
 
         //var connectionString = $"Server={server}; Initial Catalog={database}; User ID={user}; Password={password}; Encrypt=False";
-        var connectionString = $"Data Source={server}; Initial Catalog={database}; User ID={user}; Password={password};Encrypt=False";
+          var connectionString = $"Data Source={server}; Initial Catalog={database}; User ID={user}; Password={password};Encrypt=False";
 
         ////Para uso da conexão com SqlServer com Docker
         services.AddDbContext<ApplicationDbContext>(options =>
          options.UseSqlServer(connectionString, b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
-        // Descomentar se for utilizar Local (Sem Docker)
+        //// Descomentar se for utilizar Local (Sem Docker)
         //services.AddDbContext<ApplicationDbContext>(options =>
         // options.UseSqlServer(configuration.GetConnectionString("ControleUsuarioDB"
         //), b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
