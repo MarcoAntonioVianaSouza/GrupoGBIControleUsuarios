@@ -24,13 +24,14 @@ Esta é uma aplicação simples que foi desenvolvida para avaliação técnica d
 6. Acessar o URL
 7. Acessar o url https://localhost:8090/swagger/index.html
 ---
-Obs: Projeto será alterado para banco Postgree e Docker-Compose deverá ser revisto.
+Obs: Projeto será alterado para banco Postgree.
 
 ## Questões Técnicas
 
  - [Resposta Questões Técnicas](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/RESPOSTA_QUESTOES_TECNICAS_MARCOVIANA.pdf)
 
-## Vídeo da aplicação Visual Studio - Montagem do ambiente docker (Porém apresentando um erro no container que está sendo verificado)
-
+## Vídeo da aplicação Visual Studio - Montagem do ambiente docker
+   OBS: Por padrão o Swagger não aparece no ambiente developer. Habilitamos para aparecer em ambiente de produção apenas para testar as ações.
+   
 - [Vídeo com execução da Aplicação](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/AplicacaoExecutandoLocalmente-AnalisandoErroDocker-2.zip)
 
