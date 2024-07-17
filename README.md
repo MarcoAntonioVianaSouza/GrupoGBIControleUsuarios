@@ -30,7 +30,7 @@ Obs: Projeto será alterado para banco Postgree.
  - [Resposta Questões Técnicas](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/RESPOSTA_QUESTOES_TECNICAS_MARCOVIANA.pdf)
 
 ## Vídeo da aplicação Visual Studio - Montagem do ambiente docker
-   OBS: Por padrão o Swagger não aparece no ambiente produção. Habilitamos para aparecer em ambiente de produção apenas para testar as ações.
+   OBS: Por padrão o Swagger não aparece no ambiente produção. Habilitamos para aparecer em ambiente de produção apenas para testar as ações. (No vídeo gravado o Swagger não aparece, pois o ajuste foi feito posteriormente).
    
 - [Vídeo com execução da Aplicação](https://downgit.github.io/#/home?url=https://github.com/MarcoAntonioVianaSouza/GrupoGBIControleUsuarios/blob/master/AplicacaoExecutandoLocalmente-AnalisandoErroDocker-2.zip)
 
