@@ -31,15 +31,17 @@ var app = builder.Build();
 DatabaseManagementService.MigrationInitialisation(app);
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// Comentado apenas para aparecer no teste do Docker.
+// Deverá ser comentado quando rodar em produção.
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", 
             "GrupoGBIUsuarios.API V1");
     });
-}
+//}
 
 app.UseHttpsRedirection();
 
