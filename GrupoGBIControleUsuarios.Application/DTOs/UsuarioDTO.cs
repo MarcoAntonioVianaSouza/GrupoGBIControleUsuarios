@@ -24,6 +24,7 @@ public class UsuarioDTO
     [Required(ErrorMessage = "O e-mail é obrigatório")]
     [MinLength(10)]
     [MaxLength(100)]
+    [EmailAddress]
     public string Email { get;  set; }
     [Required]
     public bool EAdministrador { get; set; }
