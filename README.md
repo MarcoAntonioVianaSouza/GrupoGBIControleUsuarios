@@ -21,8 +21,7 @@ Esta é uma aplicação simples que foi desenvolvida para avaliação técnica d
 3. cd GrupoGBIControleUsuarios
 4. docker-compose build
 5. docker-compose up
-6. Acessar o URL
-7. Acessar o url https://localhost:8090/swagger/index.html
+6. Acessar o URL https://localhost:8090/swagger/index.html
 ---
 Obs: Projeto será alterado para banco Postgree.
 
