@@ -8,7 +8,7 @@ public class UsuarioDTO
     public int Id { get; set; }
         
     [Required(ErrorMessage = "Um nome de usuário (username) é obrigatório")]
-    [MinLength(10)]
+    [MinLength(5)]
     [MaxLength(20)]
     public string NomeDeUsuario { get; set; }
     
@@ -16,16 +16,22 @@ public class UsuarioDTO
     [MinLength(2)]
     [MaxLength(50)]
     public string Nome { get; set; }
+
     [Required(ErrorMessage = "O sobrenome é obrigatório")]
     [MinLength(2)]
     [MaxLength(50)]
     public string Sobrenome { get; set; }
+    
+    [Required(ErrorMessage = "Senha é obrigatória")]
+    [MinLength(10)]
     public string Senha { get; set; }
+
     [Required(ErrorMessage = "O e-mail é obrigatório")]
     [MinLength(10)]
     [MaxLength(100)]
     [EmailAddress]
     public string Email { get;  set; }
+
     [Required]
     public bool EAdministrador { get; set; }
 }
