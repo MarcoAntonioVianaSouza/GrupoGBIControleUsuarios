@@ -31,7 +31,7 @@ Obs: Projeto será alterado para banco Postgree (No momento ele utiliza o banco 
 
 ## Vídeo da aplicação Visual Studio - Montagem do ambiente docker.
    Porque o Docker? 
-   Pelo favor do docker permitir a criação de container, podemos empacotar a aplicação e todas as suas dependências e executar em qualquer ambiente.
+   Pelo fato do docker permitir a criação de container, podemos empacotar a aplicação e todas as suas dependências e executar em qualquer ambiente.
    ---
    OBS: Por padrão o Swagger não aparece no ambiente produção. Habilitamos para aparecer em ambiente de produção apenas para testar as ações. (No vídeo gravado o Swagger não aparece, pois o ajuste foi feito posteriormente).
    
